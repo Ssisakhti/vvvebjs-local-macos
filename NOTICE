@@ -1,0 +1,6 @@
+VvvebJs Local for macOS
+Based on VvvebJs 2.0.9 by Ziadin Givan and upstream contributors.
+Upstream: https://github.com/givanz/VvvebJs
+Changes in this distribution: Persian local workspace, Node local server,
+original-file editing, versioned backups and macOS launcher packaging.
+See README.md for separate font and icon license attribution.

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>فضای کار — VvvebJs</title><link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/local-home.css"><script src="/local-home.js" defer></script></head>
+<body>
+<svg class="symbols" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M19 12H5m7-7-7 7 7 7"/></symbol>
+<symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9zm0 0v6h6M8 14h8m-8 4h5"/></symbol>
+<symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h5l3 3h6a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7h18"/></symbol>
+<symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V3m-5 5 5-5 5 5M4 15v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol>
+<symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 4 2c-1 .6-1.5 1-1.5 2M12 17h.01"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 5v2"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+</defs></svg>
+<header class="topbar"><div class="topbar-inner"><a class="brand" href="/" aria-label="VvvebJs، صفحهٔ اصلی"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 28 28"><path d="m5 7 6 14M12 7l6 14M19 7l4 9"/></svg></span><span dir="ltr">Vvveb<span class="brand-light">Js</span></span></a><span class="header-divider"></span><span class="workspace-label">فضای کار شخصی</span><div class="header-end"><span class="local-badge"><span></span>روی دستگاه شما</span><button class="help-btn" id="help" type="button"><svg class="icon"><use href="#i-help"/></svg>راهنما</button></div></div></header>
+<main>
+<section class="page-heading"><div><p class="eyebrow">فضایی برای آخرین تغییرها</p><h1>فایل شما، آمادهٔ تغییر.</h1><p class="intro">فایل HTML را باز کنید. متن، تصویر و چیدمان را همان‌جا ویرایش کنید.</p></div><span class="version" dir="ltr">VvvebJs 2.0.9</span></section>
+<div class="start-grid">
+<section class="import-card" aria-labelledby="drop-title">
+<div class="dropzone" id="dropzone" tabindex="0" role="group" aria-label="انتخاب فایل HTML؛ می‌توانید فایل یا پوشه را اینجا رها کنید" aria-describedby="drop-hint">
+<div class="file-art" aria-hidden="true"><span class="art-back"></span><span class="art-front"><svg class="icon"><use href="#i-file"/></svg><b>HTML</b></span><span class="art-plus">+</span></div>
+<h2 id="drop-title">فایل یا پوشه را اینجا رها کنید</h2><p id="drop-hint">برای ویرایش فایل اصلی، دکمهٔ زیر را بزنید. رها کردن فایل یک کپی می‌سازد.</p>
+<div class="import-actions"><button class="button primary" id="open-original" type="button"><svg class="icon"><use href="#i-upload"/></svg>باز کردن فایل اصلی</button><button class="button secondary" id="choose-file" type="button">ورود کپی</button><button class="button secondary" id="choose-folder" type="button"><svg class="icon"><use href="#i-folder"/></svg>کپی پوشه</button></div>
+<p class="upload-limit">HTML و فایل‌های همراه <span>·</span> تا ۶۰ مگابایت</p>
+</div>
+<input id="file-input" type="file" accept=".html,.htm" multiple hidden><input id="folder-input" type="file" webkitdirectory multiple hidden>
+<div class="import-note"><svg class="icon"><use href="#i-folder"/></svg><p><strong>Save روی فایل بازشده ذخیره می‌کند.</strong> پیش از تغییر فایل اصلی، نسخهٔ پشتیبان ساخته می‌شود.</p></div>
+<div class="import-status" id="import-status" hidden role="status" aria-live="polite"><div class="status-head"><span id="status-text"></span><span id="status-percent"></span></div><progress id="progress" max="100" value="0" aria-label="پیشرفت ورود فایل"></progress><div class="status-bottom"><span id="status-detail"></span><button class="text-button" id="cancel-import" type="button">لغو</button><button class="text-button" id="dismiss-error" type="button" hidden>بستن</button></div></div>
+</section>
+<aside class="sample-card"><div class="sample-top"><span class="sample-tag">برای شروع</span><span class="sample-time">بدون نیاز به فایل</span></div><div class="mini-preview" aria-hidden="true"><div class="mini-browser"><i></i><i></i><i></i><span>گزارش پروژه</span></div><div class="mini-page"><span class="mini-label">نمای کلی</span><b>هر جزئیات، قابل تغییر.</b><div class="mini-line"></div><div class="mini-chart"><span></span><span></span><span></span><span></span><span></span><span></span><div class="mini-selection"><span>متن</span></div></div><div class="mini-stats"><span><b>۱۲</b>کار انجام‌شده</span><span><b>۸۵٪</b>پیشرفت پروژه</span></div></div><div class="preview-cursor"><svg viewBox="0 0 24 24"><path d="m4 3 15 10-7 1-3 7Z"/></svg><span>ویرایش شما</span></div></div><h2>اول کمی امتحان کنید</h2><p>یک گزارش فارسی با متن، تصویر و جدول آمادهٔ ویرایش است.</p><a class="button sample-button" href="/editor.html?file=workspace%2Ftest-fa.html">باز کردن نمونهٔ فارسی<svg class="icon"><use href="#i-arrow"/></svg></a></aside>
+</div>
+<section class="recent-section" aria-labelledby="recent-title"><div class="section-heading"><div class="section-title"><h2 id="recent-title">ادامهٔ کار</h2><span class="count" id="file-count">۰</span></div><label class="search"><svg class="icon"><use href="#i-search"/></svg><input type="search" id="search" placeholder="جست‌وجوی فایل…" aria-label="جست‌وجوی فایل‌های واردشده"></label></div><div class="file-list" id="file-list" aria-live="polite"><div class="empty-state">در حال دریافت فایل‌ها…</div></div><div class="list-footer"><span id="list-caption">فایل‌های واردشده روی همین دستگاه نگهداری می‌شوند.</span><button id="show-all" class="text-button" type="button" hidden>نمایش همه</button></div></section>
+<footer class="workspace-footer"><span><svg class="icon"><use href="#i-lock"/></svg>فایل اصلی با پشتیبان خودکار</span><span><svg class="icon"><use href="#i-clock"/></svg>نسخهٔ پشتیبان پیش از هر ذخیره</span><span class="footer-credit">ساخته‌شده با VvvebJs</span></footer>
+</main>
+<dialog id="help-dialog" aria-labelledby="help-title"><div class="dialog-head"><h2 id="help-title">از فایل تا خروجی، در سه گام</h2><button class="icon-button" id="close-help" aria-label="بستن راهنما"><svg class="icon"><use href="#i-close"/></svg></button></div><ol class="help-steps"><li><b>فایل را وارد کنید</b><p>«باز کردن فایل اصلی» یا Open With را انتخاب کنید. برای کار روی کپی، فایل یا پوشه را رها کنید.</p></li><li><b>روی صفحه ویرایش کنید</b><p>روی متن دوبار کلیک کنید. برای تغییر تصویر یا ظاهر، عنصر را انتخاب کنید.</p></li><li><b>ذخیره و دریافت کنید</b><p>Save روی فایل بازشده ذخیره می‌کند. نام و مسیر مقصد پایین ویرایشگر دیده می‌شود. از «نسخه‌های پشتیبان» برای پیش‌نمایش، دریافت یا بازیابی استفاده کنید.</p></li></ol><p style="font-size:12px;color:#68728a">آیکون برنامه: <a href="https://www.flaticon.com/free-icon/html_331395" target="_blank" rel="noopener noreferrer">Alfredo Hernandez — Flaticon</a></p><button class="button primary dialog-done" id="help-done">شروع می‌کنم</button></dialog>
+</body></html>

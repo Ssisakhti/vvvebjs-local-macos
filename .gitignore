@@ -1,0 +1,19 @@
+node_modules
+*.css.map
+*.js.map
+
+# Local runtime and user documents. Never publish these.
+workspace/
+media/
+local-backups/
+.local-documents.json
+.local-launch-token
+.local-ui-backups/
+local-server.log
+local-server.pid
+__pycache__/
+*.pyc
+.DS_Store
+*.app/
+.env
+.env.*
